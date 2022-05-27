@@ -4,7 +4,7 @@ import switchColor from '../../switchColor';
 export default function Statistics({ title, stats }) {
   return (
     <section className="statistics">
-      <h2 className="title">{title}</h2>
+      {title && <h2 className="title">{title}</h2>}
       <ul className="stat-list">
         {stats.map(({ id, label, percentage }) => (
           <li
@@ -25,9 +25,9 @@ Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
-      label: PropTypes.string,
-      percentage: PropTypes.number,
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
     })
-  ),
+  ).isRequired,
 };
