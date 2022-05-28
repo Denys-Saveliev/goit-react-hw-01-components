@@ -1,10 +1,10 @@
-import Profile from './profile/Profile';
+import Profile from './profile';
 import user from '../data/user.json';
-import Statistics from './statistics/Statistics';
+import Statistics from './statistics';
 import data from '../data/data.json';
-import FriendList from './friendList/FriendList';
+import FriendList from './friendList';
 import friends from '../data/friends.json';
-import TransactionHistory from './transactionHistory/TransactionHistory';
+import TransactionHistory from './transactionHistory';
 import transactions from '../data/transactions.json';
 
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
         views={user.stats.views}
         likes={user.stats.likes}
       />
-      <Statistics stats={data} title={'Upload stats'} />
+      <Statistics stats={data} title="Upload stats" />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />;
     </>
